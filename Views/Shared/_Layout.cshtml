@@ -14,9 +14,13 @@
             <div class="row">
                 <nav class="blue-text">
                     <div class="nav-wrapper lime accent-2">
-
                         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                        <a href="#" class="right" style="margin-right: 10px;">Выйти</a>
+                    <form class="right" style="margin-right: 10px;" method="post" asp-controller="Account" asp-action="Logout">
+                        <button class="btn-small waves-effect lime accent-3 black-text" type="submit" name="action">
+                            <i class="material-icons" style="font-size: 15px;line-height: unset;">exit_to_app</i>
+                        </button>
+                    </form>
+
                         <ul class="left hide-on-med-and-down">
                             <li class="active"><a href="sass.html">Инфо</a></li>
                             <li><a href="#">Продажи</a></li>
@@ -44,7 +48,6 @@
         </main>
     </div>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/materialize/materialize.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 

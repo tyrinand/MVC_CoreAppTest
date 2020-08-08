@@ -11,7 +11,8 @@ using Microsoft.Extensions.Hosting;
 using CustomIdentityApp.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using SaleSoft.Models;
+using SaleSoft.Repositories;
 
 namespace SaleSoft
 {
@@ -31,12 +32,14 @@ namespace SaleSoft
 
             string connection = Configuration.GetConnectionString("MvcMovieContext");
 
-            services.AddDbContext<ApplicationContext>(options =>
+
+            services.AddDbContext<IdentityContext>(options =>
                     options.UseNpgsql(connection));
 
-            services.AddIdentity<User, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationContext>();
+            services.AddScoped<ISalesRepository, SalesRepository>();
 
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<IdentityContext>();
 
             services.AddControllersWithViews();
         }

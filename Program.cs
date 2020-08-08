@@ -9,6 +9,8 @@ using Microsoft.Extensions.Logging;
 using CustomIdentityApp.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Identity;
+using SaleSoft.Models.EF;
+using SaleSoft.Models;
 
 namespace SaleSoft
 {
@@ -25,6 +27,9 @@ namespace SaleSoft
                 {
                     var userManager = services.GetRequiredService<UserManager<User>>();
                     RoleInitializer.InitializeAsync(userManager);
+
+                    var context = services.GetRequiredService<IdentityContext>();
+                    SampleData.Initialize(context);
                 }
                 catch (Exception ex)
                 {

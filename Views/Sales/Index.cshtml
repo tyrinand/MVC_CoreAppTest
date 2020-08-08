@@ -1,0 +1,53 @@
+﻿@model List<SaleSoft.Models.EF.Sale>
+@{
+    ViewData["Title"] = "Продажи";
+}
+<table class="responsive-table">
+    <thead>
+        <tr>
+            <th>Софт</th>
+            <th>Цена за единицу</th>
+            <th>Кол-во</th>
+            <th>Скидка</th>
+            <th>Сумма</th>
+            <th>Причина скидки</th>
+            <th>Дата</th>
+            <th>Клиент</th>
+            <th>Магазин</th>
+            <th>Операции</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Soft.Name</td>
+                <td>@item.Soft.Price</td>
+                <td>@item.Count</td>
+                <td>@item.Discount.Value %</td>
+                <td>@item.Сost</td>
+                <td>@item.Discount.Description</td>
+                <td>@item.Date.Date</td>
+                <td>@item.Clinet.FullName</td>
+                <td>@item.Shop.Name</td>
+                <td>
+                    <a href="~/Sales/Update/@item.Id" class="my-icons"> <i class="material-icons ">edit</i></a>
+                    <a href="#" onclick="Delete('@item.Id')" class="my-icons"> <i class="material-icons my-icons">clear</i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts {
+    <script>
+        console.log("Привет Мир!!!");
+    //вывести подсказку вопрос при удалении
+    //напистаь аякс запрос
+    //радирект назад на список при успехе
+    </script>
+   
+}
+
+
+
+

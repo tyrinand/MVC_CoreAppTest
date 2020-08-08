@@ -1,0 +1,41 @@
+﻿@model IndexViewModel;
+@{
+    ViewData["Title"] = "Софт";
+}
+@addTagHelper *, SaleSoft
+<table class="responsive-table">
+    <thead>
+        <tr>
+            <th>Наименование</th>
+            <th>Описание</th>
+            <th>Цена</th>
+            <th>Кол-во</th>
+            <th>Операции</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Softs)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Des</td>
+                <td>@item.Count</td>
+                <td>@item.Price</td>
+                <td>
+                    <a href="~/Softs/Update/@item.Id" class="my-icons"> <i class="material-icons ">edit</i></a>
+                    <a href="#" onclick="Delete('@item.Id')" class="my-icons"> <i class="material-icons my-icons">clear</i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<page-link page-model="Model.PageViewModel" page-action="Index"></page-link>
+@section Scripts {
+    <script>
+        console.log("softs");
+        //вывести подсказку вопрос при удалении
+        //напистаь аякс запрос
+        //радирект назад на список при успехе
+    </script>
+}
+

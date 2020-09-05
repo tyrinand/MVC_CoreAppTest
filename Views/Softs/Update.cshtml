@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Обновление Софта";
+}
+@model SaleSoft.Models.EF.Soft
+
+<div class="row center-align">
+    <form class="col s8 offset-s2" method="post" asp-action="UpdateSoft" asp-controller="Softs">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <div class="row">
+            <div class="input-field col s12 ">
+                <input id="name" type="text" name="Name" class="validate" autocomplete="off" required value="@Model.Name" />
+                <label for="name">Наименование</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 ">
+                <input id="des" type="text" name="Des" class="validate" autocomplete="off" required value="@Model.Des" />
+                <label for="des">Описание</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 ">
+                <input id="price" type="number" name="PriceStr" class="validate" autocomplete="off" min="1" step=".1" required value="@Model.Price" />
+                <label for="price">Цена</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 ">
+                <input id="count" type="number" name="Count" class="validate" autocomplete="off" min="1" required value="@Model.Count" />
+                <label for="count">Кол-во</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 ">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Сохранить</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -16,7 +16,7 @@ namespace CustomIdentityApp.Models
 
             if (userManager.FindByNameAsync(adminEmail).Result == null)
             {
-                User admin = new User { UserName = adminEmail };
+                User admin = new User { UserName = adminEmail, Id = "0" };
                 IdentityResult result = userManager.CreateAsync(admin, password).Result;
                 if (result.Succeeded)
                 {

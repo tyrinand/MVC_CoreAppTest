@@ -12,7 +12,6 @@ using CustomIdentityApp.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SaleSoft.Models;
-using SaleSoft.Repositories;
 
 namespace SaleSoft
 {
@@ -35,8 +34,6 @@ namespace SaleSoft
 
             services.AddDbContext<IdentityContext>(options =>
                     options.UseNpgsql(connection));
-
-            services.AddScoped<ISalesRepository, SalesRepository>();
 
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<IdentityContext>();

@@ -6035,19 +6035,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Андрей\\.nuget\\packages\\": {}
+    "C:\\Users\\tyrin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\с# практика\\MVC проект\\Чистый проект\\SaleSoft\\SaleSoft.csproj",
+      "projectUniqueName": "D:\\sandbox for project\\MVC\\MVC_CoreAppTest\\SaleSoft.csproj",
       "projectName": "SaleSoft",
-      "projectPath": "D:\\с# практика\\MVC проект\\Чистый проект\\SaleSoft\\SaleSoft.csproj",
-      "packagesPath": "C:\\Users\\Андрей\\.nuget\\packages\\",
-      "outputPath": "D:\\с# практика\\MVC проект\\Чистый проект\\SaleSoft\\obj\\",
+      "projectPath": "D:\\sandbox for project\\MVC\\MVC_CoreAppTest\\SaleSoft.csproj",
+      "packagesPath": "C:\\Users\\tyrin\\.nuget\\packages\\",
+      "outputPath": "D:\\sandbox for project\\MVC\\MVC_CoreAppTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Андрей\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tyrin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6098,12 +6098,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.2, 3.1.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -6112,7 +6106,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

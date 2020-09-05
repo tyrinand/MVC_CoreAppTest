@@ -6,9 +6,9 @@ using SaleSoft.Models.EF;
 
 namespace SaleSoft.Models
 {
-    public class IndexViewModel
+    public class IndexViewModel<T>
     {
-        public IEnumerable<Soft> Softs { get; set; }
+        public IEnumerable<T> List { get; set; }
         public PageViewModel PageViewModel { get; set; }
     }
 }

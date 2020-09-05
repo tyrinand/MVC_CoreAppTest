@@ -1,7 +1,8 @@
-﻿@model List<SaleSoft.Models.EF.Sale>
+﻿@model IndexViewModel<SaleSoft.Models.EF.Sale>
 @{
     ViewData["Title"] = "Продажи";
 }
+@addTagHelper *, SaleSoft
 <table class="responsive-table">
     <thead>
         <tr>
@@ -18,7 +19,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.List)
         {
             <tr>
                 <td>@item.Soft.Name</td>
@@ -38,14 +39,15 @@
         }
     </tbody>
 </table>
+<page-link page-model="Model.PageViewModel" page-action="Index"></page-link>
 @section Scripts {
     <script>
         console.log("Привет Мир!!!");
-    //вывести подсказку вопрос при удалении
-    //напистаь аякс запрос
-    //радирект назад на список при успехе
+        //вывести подсказку вопрос при удалении
+        //напистаь аякс запрос
+        //радирект назад на список при успехе
     </script>
-   
+
 }
 
 

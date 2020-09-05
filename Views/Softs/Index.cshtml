@@ -1,4 +1,4 @@
-﻿@model IndexViewModel;
+﻿@model IndexViewModel<SaleSoft.Models.EF.Soft>;
 @{
     ViewData["Title"] = "Софт";
 }
@@ -14,13 +14,13 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Softs)
+        @foreach (var item in Model.List)
         {
             <tr>
                 <td>@item.Name</td>
                 <td>@item.Des</td>
-                <td>@item.Count</td>
                 <td>@item.Price</td>
+                <td>@item.Count</td>
                 <td>
                     <a href="~/Softs/Update/@item.Id" class="my-icons"> <i class="material-icons ">edit</i></a>
                     <a href="#" onclick="Delete('@item.Id')" class="my-icons"> <i class="material-icons my-icons">clear</i></a>
@@ -29,13 +29,50 @@
         }
     </tbody>
 </table>
-<page-link page-model="Model.PageViewModel" page-action="Index"></page-link>
+<div class="row center-align">
+    <ul class="pagination">
+        @for (int i = 1; i <= Model.PageViewModel.TotalPages; i++)
+        {
+            string temp = (i == Model.PageViewModel.PageNumber) ? "active" : "";
+            <li class="page-item @temp">
+                <a class="page-link" href="/Softs?page=@i">@i</a>
+            </li>
+        }
+    </ul>
+</div>
+<div class="row center-align">
+    <a class="waves-effect waves-light btn" href="~/Softs/Create">Добавить</a>
+</div>
 @section Scripts {
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+
     <script>
-        console.log("softs");
-        //вывести подсказку вопрос при удалении
-        //напистаь аякс запрос
-        //радирект назад на список при успехе
+       function Delete(id){
+        var r = confirm("Вы действительно хотите удалить?");
+        if (r == true) {
+
+            $.ajax(
+            {
+                type: "POST",
+                url: '@Url.Action("Delete", "Softs")',
+                data: {
+                    id: id
+                },
+                error: function (result) {
+                    alert("error");
+                },
+                success: function (result) {
+                    if (result == true) {
+                        var baseUrl ="/Softs/Index";
+                        window.location.reload();
+                    }
+                    else {
+                        alert("There is a problem, Try Later!");
+                    }
+                }
+            });
+        }
+    }
     </script>
 }
 

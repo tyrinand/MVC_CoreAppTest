@@ -21,7 +21,6 @@ namespace SaleSoft.Controllers
 
         public IActionResult Index(int page = 1)
         {
-
             int pageSize = 1;
             int count = _context.Sales.Count();
             var items = _context.Sales.Include(x => x.Shop).Include(x => x.Soft).Include(x => x.Clinet).Include(x => x.Discount).Skip((page - 1) * pageSize).Take(pageSize).ToList();

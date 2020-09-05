@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Добавление Клиента";
+}
+
+<div class="row center-align">
+    <form class="col s8 offset-s2" method="post" asp-action="CreateClient" asp-controller="Clients">
+        <div class="row">
+            <div class="input-field col s12 ">
+                <input id="FullName" type="text" name="FullName" class="validate" autocomplete="off" required />
+                <label for="FullName">Полное имя</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 ">
+                <input id="price" type="number" name="Mark" class="validate" autocomplete="off" min="1" max="5" required />
+                <label for="price">Оценка</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 ">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Добавить</button>
+            </div>
+        </div>
+    </form>
+</div>

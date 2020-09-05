@@ -178,3 +178,6 @@ D:\sandbox for project\MVC\MVC_CoreAppTest\obj\Debug\netcoreapp3.1\SaleSoft.pdb
 D:\sandbox for project\MVC\MVC_CoreAppTest\obj\Debug\netcoreapp3.1\SaleSoft.genruntimeconfig.cache
 D:\sandbox for project\MVC\MVC_CoreAppTest\obj\Debug\netcoreapp3.1\Razor\Views\Softs\Create.cshtml.g.cs
 D:\sandbox for project\MVC\MVC_CoreAppTest\obj\Debug\netcoreapp3.1\Razor\Views\Softs\Update.cshtml.g.cs
+D:\sandbox for project\MVC\MVC_CoreAppTest\obj\Debug\netcoreapp3.1\Razor\Views\Clients\Index.cshtml.g.cs
+D:\sandbox for project\MVC\MVC_CoreAppTest\obj\Debug\netcoreapp3.1\Razor\Views\Clients\Create.cshtml.g.cs
+D:\sandbox for project\MVC\MVC_CoreAppTest\obj\Debug\netcoreapp3.1\Razor\Views\Clients\Update.cshtml.g.cs

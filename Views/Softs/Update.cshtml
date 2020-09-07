@@ -20,7 +20,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12 ">
-                <input id="price" type="number" name="PriceStr" class="validate" autocomplete="off" min="1" step=".1" required value="@Model.Price" />
+                <input id="price" type="number" name="PriceStr" class="validate" autocomplete="off" min="1" step=".1" required value="@Model.Price.ToString().Replace(',','.')" />
                 <label for="price">Цена</label>
             </div>
         </div>

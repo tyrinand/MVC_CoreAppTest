@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Обновление Скидки";
+}
+@model SaleSoft.Models.EF.Discount
+
+<div class="row center-align">
+    <form class="col s8 offset-s2" method="post" asp-action="UpdateDiscount" asp-controller="Discounts">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <div class="row">
+            <div class="input-field col s12 ">
+                <input id="FullName" type="text" name="Description" class="validate" autocomplete="off" required  value="@Model.Description"/>
+                <label for="FullName">Описание</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 ">
+                <input id="price" type="number" name="DisVal" class="validate" autocomplete="off" min="1" step=".1" required value="@Model.Value.ToString().Replace(',','.')" />
+                <label for="price">Цена</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12 ">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Сохранить</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -181,3 +181,9 @@ D:\sandbox for project\MVC\MVC_CoreAppTest\obj\Debug\netcoreapp3.1\Razor\Views\S
 D:\sandbox for project\MVC\MVC_CoreAppTest\obj\Debug\netcoreapp3.1\Razor\Views\Clients\Index.cshtml.g.cs
 D:\sandbox for project\MVC\MVC_CoreAppTest\obj\Debug\netcoreapp3.1\Razor\Views\Clients\Create.cshtml.g.cs
 D:\sandbox for project\MVC\MVC_CoreAppTest\obj\Debug\netcoreapp3.1\Razor\Views\Clients\Update.cshtml.g.cs
+D:\sandbox for project\MVC\MVC_CoreAppTest\obj\Debug\netcoreapp3.1\Razor\Views\Shops\Create.cshtml.g.cs
+D:\sandbox for project\MVC\MVC_CoreAppTest\obj\Debug\netcoreapp3.1\Razor\Views\Shops\Index.cshtml.g.cs
+D:\sandbox for project\MVC\MVC_CoreAppTest\obj\Debug\netcoreapp3.1\Razor\Views\Shops\Update.cshtml.g.cs
+D:\sandbox for project\MVC\MVC_CoreAppTest\obj\Debug\netcoreapp3.1\Razor\Views\Discounts\Index.cshtml.g.cs
+D:\sandbox for project\MVC\MVC_CoreAppTest\obj\Debug\netcoreapp3.1\Razor\Views\Discounts\Create.cshtml.g.cs
+D:\sandbox for project\MVC\MVC_CoreAppTest\obj\Debug\netcoreapp3.1\Razor\Views\Discounts\Update.cshtml.g.cs

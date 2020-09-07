@@ -40,8 +40,11 @@ namespace SaleSoft.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateSoft(Soft soft)
+        public ActionResult CreateSoft(Soft soft, string PriceStr)
         {
+            var value = PriceStr.Replace('.', ',');
+            soft.Price = Convert.ToDecimal(value);
+
             _context.Softs.Add(soft);
             _context.SaveChanges();
             return RedirectToAction("Index", "Softs");

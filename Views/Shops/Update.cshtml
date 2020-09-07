@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Обновление Магазина";
+}
+@model SaleSoft.Models.EF.Shop
+
+<div class="row center-align">
+    <form class="col s8 offset-s2" method="post" asp-action="UpdateShop" asp-controller="Shops">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <div class="row">
+            <div class="input-field col s12 ">
+                <input id="Name" type="text" name="Name" class="validate" autocomplete="off" required value="@Model.Name" />
+                <label for="Name">Полное имя</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12 ">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Сохранить</button>
+            </div>
+        </div>
+    </form>
+</div>

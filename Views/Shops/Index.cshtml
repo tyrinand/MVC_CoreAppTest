@@ -1,0 +1,72 @@
+﻿@model IndexViewModel<SaleSoft.Models.EF.Shop>;
+@{
+    ViewData["Title"] = "Магазины";
+}
+<div class="row center-align">
+    <table class="responsive-table centered">
+        <thead>
+            <tr>
+                <th>Наименование</th>
+                <th>Операции</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.List)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>
+                        <a href="~/Shops/Update/@item.Id" class="my-icons"> <i class="material-icons ">edit</i></a>
+                        <a href="#" onclick="Delete('@item.Id')" class="my-icons"> <i class="material-icons my-icons">clear</i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="row center-align">
+        <ul class="pagination">
+            @for (int i = 1; i <= Model.PageViewModel.TotalPages; i++)
+            {
+                string temp = (i == Model.PageViewModel.PageNumber) ? "active" : "";
+                <li class="page-item @temp">
+                    <a class="page-link" href="/Shops?page=@i">@i</a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="row center-align">
+        <a class="waves-effect waves-light btn" href="~/Shops/Create">Добавить</a>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+
+    <script>
+       function Delete(id){
+        var r = confirm("Вы действительно хотите удалить?");
+        if (r == true) {
+
+            $.ajax(
+            {
+                type: "POST",
+                url: '@Url.Action("Delete", "Shops")',
+                data: {
+                    id: id
+                },
+                error: function (result) {
+                    alert("error");
+                },
+                success: function (result) {
+                    if (result == true) {
+                        var baseUrl ="/Shops/Index";
+                        window.location.reload();
+                    }
+                    else {
+                        alert("There is a problem, Try Later!");
+                    }
+                }
+            });
+        }
+    }
+    </script>
+}

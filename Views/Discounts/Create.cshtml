@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Добавление Скидки";
+}
+
+<div class="row center-align">
+    <form class="col s8 offset-s2" method="post" asp-action="CreateDiscount" asp-controller="Discounts">
+        <div class="row">
+            <div class="input-field col s12 ">
+                <input id="FullName" type="text" name="Description" class="validate" autocomplete="off" required />
+                <label for="FullName">Описание</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 ">
+                <input id="price" type="number" name="DisVal" class="validate" autocomplete="off" step=".1" min="1" required />
+                <label for="price">Оценка</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 ">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Добавить</button>
+            </div>
+        </div>
+    </form>
+</div>

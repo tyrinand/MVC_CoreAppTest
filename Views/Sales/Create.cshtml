@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Добавление продажи";
+}
+@model SaleSoft.Models.EF.Sale
+
+<div class="row center-align">
+    <form class="col s8 offset-s2" method="post" asp-action="CreateSale" asp-controller="Sales">
+        <div class="input-field col s12">
+            <select name="ShopId" required>
+                <option value="" disabled selected>Выберете магазин</option>
+                @foreach(var item in ViewBag.ShopId)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+            <label>Магазин</label>
+        </div>
+        <div class="input-field col s12">
+            <select required name="ClientId">
+                <option value="" disabled selected>Выберете клиента</option>
+                @foreach (var item in ViewBag.ClientId)
+                {
+                    <option value="@item.Id">@item.FullName</option>
+                }
+            </select>
+            <label>Клиент</label>
+        </div>
+        <div class="input-field col s12">
+            <select name="SoftId" required id="Soft">
+                <option value="" disabled selected>Выберете софт</option>
+                @foreach (var item in ViewBag.SoftId)
+                {
+                    <option value="@item.Id" price="@item.Price">@item.Name</option>
+                }
+            </select>
+            <label>Софт</label>
+        </div>
+        <div class="input-field col s12">
+            <select name="DiscountId" id="DiscountId" required>
+                <option value="" disabled selected>Выберете скидку</option>
+                @foreach (var item in ViewBag.DiscountId)
+                {
+                    <option value="@item.Id" disValue="@item.Value">@item.FullDescr</option>
+                }
+            </select>
+            <label>Скидка</label>
+        </div>
+        <div class="input-field col s12">
+            <input type="date" name="Date" required placeholder="Выбирете дату" />
+            <label>Дата продажи</label>
+        </div>
+        <div class="input-field col s12">
+            <input type="number" name="Count" id="Count" required placeholder="кол-во > 0" min="1" />
+            <label>Кол-во</label>
+        </div>
+        <div class="input-field col s12">
+            <input type="text" disabled id="one-price" placeholder=" "/>
+            <label for="one-price">Цена за единицу</label>
+        </div>
+        <div class="input-field col s12">
+            <input type="text" disabled id="full-price" placeholder=" "/>
+            <label for="full-price">Полная стоимость</label>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 ">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Добавить</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/materialize/materialize.js"></script>
+    <script src="~/js/Sale.js?20201029_9"></script>
+}

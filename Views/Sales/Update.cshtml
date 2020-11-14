@@ -1,0 +1,102 @@
+﻿@{
+    ViewData["Title"] = "Обновление продажи";
+}
+@model SaleSoft.Models.EF.Sale
+
+<div class="row center-align">
+    <form class="col s8 offset-s2" method="post" asp-action="Sale" asp-controller="Sales">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <div class="input-field col s12">
+            <select name="ShopId" required>
+                @foreach (var item in ViewBag.ShopId)
+                {
+                    @if (item.Id == Model.ShopId)
+                    {
+                        <option value="@item.Id" selected>@item.Name</option>
+                    }
+                    else
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                }
+            </select>
+            <label>Магазин</label>
+        </div>
+        <div class="input-field col s12">
+            <select required name="ClientId">
+                @foreach (var item in ViewBag.ClientId)
+                {
+                    @if (item.Id == Model.ClientId)
+                    {
+                        <option value="@item.Id" selected>@item.FullName</option>
+                    }
+                    else
+                    {
+                        <option value="@item.Id">@item.FullName</option>
+                    }
+                }
+            </select>
+            <label>Клиент</label>
+        </div>
+        <div class="input-field col s12">
+            <select name="SoftId" required id="Soft">
+                @foreach (var item in ViewBag.SoftId)
+                {
+                    @if (item.Id == Model.ShopId)
+                    {
+                        <option value="@item.Id" selected price="@item.Price">@item.Name</option>
+                    }
+                    else
+                    {
+                        <option value="@item.Id" price="@item.Price">@item.Name</option>
+                    }
+
+                }
+            </select>
+            <label>Софт</label>
+        </div>
+        <div class="input-field col s12">
+            <select name="DiscountId" id="DiscountId" required>
+                @foreach (var item in ViewBag.DiscountId)
+                {
+                    @if (item.Id == Model.DiscountId)
+                    {
+                        <option value="@item.Id" disValue="@item.Value" selected>@item.FullDescr</option>
+                    }
+                    else
+                    {
+                        <option value="@item.Id" disValue="@item.Value">@item.FullDescr</option>
+                    }
+                }
+            </select>
+            <label>Скидка</label>
+        </div>
+        <div class="input-field col s12">
+            <input type="date" name="Date" required placeholder="Выбирете дату" value="@Model.Date.ToString("yyyy-MM-dd")" />
+            <label>Дата продажи</label>
+        </div>
+        <div class="input-field col s12">
+            <input type="number" name="Count" id="Count" required placeholder="кол-во > 0" min="1" value="@Model.Count" />
+            <label>Кол-во</label>
+        </div>
+        <div class="input-field col s12">
+            <input type="text" disabled id="one-price" placeholder=" " />
+            <label for="one-price">Цена за единицу</label>
+        </div>
+        <div class="input-field col s12">
+            <input type="text" disabled id="full-price" placeholder=" " />
+            <label for="full-price">Полная стоимость</label>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 ">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Сохранить</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/materialize/materialize.js"></script>
+    <script src="~/js/Sale.js?20201029_9"></script>
+}
